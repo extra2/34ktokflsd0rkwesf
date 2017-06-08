@@ -44,6 +44,7 @@ void read_from_file(bool ktory_problem, plecak *nowy_plecak) {
 				file >> wartosc >> rozmiar;
 				nowy_plecak->dodaj_przedmiot(rozmiar, wartosc);
 			}
+			// zrobi
 			nowy_plecak->zachlanny();
 			nowy_plecak->dynamiczny();
 		}

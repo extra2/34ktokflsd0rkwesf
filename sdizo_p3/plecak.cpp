@@ -196,15 +196,17 @@ void plecak::dynamiczny() {
 			}
 		}
 	}
+	// wypisz wynik (bez podanie kolejnych przedmiotow - trzeba dorobic):
 	//cout << endl << endl << "A[ile_przedm - 1][rozmiar - 1] = " << A[ile_przedmiotow - 1][rozmiar - 1] << endl;
-		for (int j = 0; j < rozmiar+1; j++) {
-			//cout << endl << A[ile_przedmiotow-1][j];
-	}
-		for (int i = 1; i < ile_przedmiotow+1; i++) {
+		for (int i = 1; i < ile_przedmiotow+1; i++) { // wypisanie danych - testowo
 			for (int j = 0; j < rozmiar + 1; j++) {
 				cout << i << " " << j << " " << A[i][j] << endl;
 			}
 		}
+		for (int i = 0; i < ile_przedmiotow;  i++) {
+			delete A[i];
+		}
+		delete[] A;
 }
 void plecak::dodaj_przedmiot(int rozmiar, int wartosc)
 {
