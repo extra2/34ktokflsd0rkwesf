@@ -131,35 +131,7 @@ void plecak::sortuj() { // sortowanie dla zachlannego
 }
 
 void plecak::dynamiczny() {
-	// ------- rozwiazanie 1 - nie do konca dobre, bo przedmiotu mozna uzyc wielokrotnie
-	// ------- generalnie jest do wywalenia, ale jako ze to napisalem i dzialalo, to narazie sobie
-	// ------- zostawie, bo szkoda sie go pozbywac
-	/*
-	for i:=0 to W do // W to max rozmiar
-    A[i]:= 0
-
-  for i:=0 to W do
-    for j:=1 to n do
-      if ( w[j] <= i ) then   //sprawdzenie czy j-ty element mieści się w plecaku o rozmiarze i
-        A[i] = max(A[i], A[i-w[j]] + c[j]) // w - wagi, c - wartosc
-
-	// implementacja
-	int *A = new int[rozmiar];
-	for (int i = 0; i < rozmiar; i++)A[i] = 0;
-
-	for (int i = 0; i < rozmiar; i++) {
-		for (int j = 0; j < ile_przedmiotow; j++) {
-			if (przedmioty[j].rozmiar <= i) {
-				if (A[i] < A[i - przedmioty[j].rozmiar] + przedmioty[j].wartosc)
-					A[i] = A[i - przedmioty[j].rozmiar] + przedmioty[j].wartosc;
-			}
-		}
-	}
-	for(int i = 0; i < rozmiar; i++)cout << "\nA[" << i << "]: " << A[i];
-	delete[] A;
-	*/
-
-	// -------- rozwiazanie 2- poprawne
+	// -------- rozwiazanie wikipedia
 	/*
 	 for i:=0 to n do
     A[i,0]:= 0
@@ -178,7 +150,7 @@ void plecak::dynamiczny() {
 	// dobra on nie ma dzialac dokladnie
 	// czyli jest ok, on znajduje wynik "okolo"
 	// robie tabelke i (w pionie - numer przedmiotu) i j (w poziomie - rozmiar plecaka)
-	int **A = new int*[ile_przedmiotow+1];
+	int **A = new int*[ile_przedmiotow+1]; // przechowuje najoptymalniejszy WYNIK dla konktretnego rozmiaru przy wyborze n pierwszych elementow
 	for (int i = 0; i < ile_przedmiotow+1; i++) A[i] = new int[rozmiar+1]; // robie dynamiczna tablice 2-wymiarowa
 
 	for (int i = 0; i < rozmiar+1; i++) A[0][i] = 0; // zeruje, jak w algorytmie z wiki
@@ -190,13 +162,13 @@ void plecak::dynamiczny() {
 			if (przedmioty[i-1].rozmiar > j) {
 				A[i][j] = A[i - 1][j]; // kopiuje sobie poprzedni wynik, bo nie zmiesci sie ten przedmiot
 			}
-			else { // tu wybieram wieksza wartosc i przypisuje do A[i][j]
+			else { // tu wybieram wieksza wartosc i przypisuje do A[i][j] (wieksza wartosc - czy dodac nowy obiekt czy wynik dla poprzedniego przedmiotu byl wiekszy)
 				if (A[i - 1][j] > A[i - 1][j - przedmioty[i-1].rozmiar] + przedmioty[i-1].wartosc) A[i][j] = A[i - 1][j];
 				else A[i][j] = A[i - 1][j - przedmioty[i-1].rozmiar] + przedmioty[i-1].wartosc;
 			}
 		}
 	}
-	// wypisz wynik (bez podanie kolejnych przedmiotow - trzeba dorobic):
+	// wypisz:
 	//cout << endl << endl << "A[ile_przedm - 1][rozmiar - 1] = " << A[ile_przedmiotow - 1][rozmiar - 1] << endl;
 		for (int i = 1; i < ile_przedmiotow+1; i++) { // wypisanie danych - testowo
 			for (int j = 0; j < rozmiar + 1; j++) {
