@@ -1,0 +1,8 @@
+Wyniki:
+sack1: Vin = 10  => V = 10, wartoœæ = 285
+sack2: Vin = 30  => V = 26, wartoœæ = 501
+sack3: Vin = 90  => v = 90, wartoœæ = 1233
+sack4: Vin = 120 => V = 120,wartoœæ = 1509
+
+TSP4:  koszt drogi: 200 (wynik dok³adny)
+TSP10: koszt drogi: 212 (wynik dok³adny)
