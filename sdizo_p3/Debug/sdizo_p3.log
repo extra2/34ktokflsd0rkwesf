@@ -1,6 +1,3 @@
 ﻿  plecak.cpp
-d:\master\documents\visual studio 2017\projects\sdizo_p3\sdizo_p3\plecak.cpp(106): warning C4018: '<': signed/unsigned mismatch
-d:\master\documents\visual studio 2017\projects\sdizo_p3\sdizo_p3\plecak.cpp(117): warning C4018: '<': signed/unsigned mismatch
-d:\master\documents\visual studio 2017\projects\sdizo_p3\sdizo_p3\plecak.cpp(118): warning C4018: '<': signed/unsigned mismatch
   sdizo_p3.vcxproj -> D:\master\Documents\Visual Studio 2017\Projects\sdizo_p3\Debug\sdizo_p3.exe
   sdizo_p3.vcxproj -> D:\master\Documents\Visual Studio 2017\Projects\sdizo_p3\Debug\sdizo_p3.pdb (Partial PDB)

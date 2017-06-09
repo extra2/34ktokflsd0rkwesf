@@ -4,6 +4,7 @@
 class przedmiot
 {
 public:
+	przedmiot();
 	przedmiot(int rozmiar, int wartosc);
 	int wartosc;
 	int rozmiar;
