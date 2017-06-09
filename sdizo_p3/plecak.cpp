@@ -86,7 +86,8 @@ void plecak::zachlanny() { // dziala i nie dziala; bo tak ma byc, nie pokazuje n
 		}
 	}
 	// --------------- wypisanie ---------------
-	cout << "\nPrzedmioty: \n";
+	cout << "\n --- ALgorytm zachlanny ---\n";
+	cout << "ROZMIAR | WARTOSC\n";
 	for (unsigned int i = 0; i < przedmioty_dla_max.size(); i++) {
 		cout << przedmioty_dla_max[i].rozmiar << " " << przedmioty_dla_max[i].wartosc << endl;
 	}
@@ -148,7 +149,8 @@ void plecak::dynamiczny() {
 		}
 	}
 	// ---- wypisz: ----
-	cout << "\nROZMIAR | WARTOSC\n";
+	cout << "\n --- Algorytm - programowanie dynamiczne ---\n";
+	cout << "ROZMIAR | WARTOSC\n";
 	for (unsigned int k = 0; k < buff_przedm[ile_przedmiotow][rozmiar].size(); k++) {
 			cout << buff_przedm[ile_przedmiotow][rozmiar][k].rozmiar << " " << buff_przedm[ile_przedmiotow][rozmiar][k].wartosc << endl;
 		}
