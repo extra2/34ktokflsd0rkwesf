@@ -14,7 +14,6 @@ class plecak
 {
 public:
 	plecak(int rozmiar, int ile_przedmiotow);
-	void sprawdz_max_bruteforce();
 	void zachlanny();
 	void dynamiczny();
 	void dodaj_przedmiot(int rozmiar, int wartosc);

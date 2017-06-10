@@ -142,11 +142,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="komiwojazer.h" />
     <ClInclude Include="plecak.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="komiwojazer.cpp" />
     <ClCompile Include="plecak.cpp" />
     <ClCompile Include="sdizo_p3.cpp" />
     <ClCompile Include="stdafx.cpp" />

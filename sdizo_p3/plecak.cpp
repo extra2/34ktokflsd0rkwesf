@@ -30,50 +30,6 @@ przedmiot::przedmiot(int wartosc, int rozmiar)
 	this->rozmiar = rozmiar;
 }
 
-void plecak::sprawdz_max_bruteforce() // chwilowo nieczynne, zapraszamy za jakis czas
-{
-	int suma = 0;
-	for (int j = 0; j < ile_przedmiotow; j++)
-	{
-		przedmioty_buffer.clear();
-		suma = 0;
-		for (int i = j; i >= 0; i--)
-		{
-			if (przedmioty[i].wartosc == rozmiar)
-			{
-				przedmioty_buffer.push_back(przedmioty[i]);
-			}
-			if (przedmioty[i].wartosc > rozmiar) continue;
-			if (suma + przedmioty[i].wartosc > rozmiar)
-				continue;
-			suma += przedmioty[i].wartosc;
-			przedmioty_buffer.push_back(przedmioty[i]);
-		}
-		if (suma == rozmiar)
-			break;
-		if (/*suma poprzednia < suma nastepna*/true)
-		{
-			 //kopiowanie wektora                       
-		}
-	}
-		/*if (suma != rozmiar)
-		{
-				cout << "Nie ma mozliwosci takiego spakowania elementow " << endl;
-				cout << "Aby zapakowane elementy mialy najwieksza mase naleze spakowac elementy: ";
-				iter(optymalny.size())
-				cout << optymalny[i] << " ";
-		}
-		else
-		{
-				cout << "Istnieje taka  mozliwosc, nalezy spakowac elementy o masach: ";
-				iter(mozliwosc.size())
-			{
-					cout << mozliwosc[i] << " ";
-			}
-		}*/
-
-}
-
 void plecak::zachlanny() { // dziala i nie dziala; bo tak ma byc, nie pokazuje najoptymalniejszego wyniku, ale zlozonosc czasowa jest niewielka
 	sortuj(); // sortuje przedmioty, trafiaja do vectora przedmiotow przedmioty_rosnaco, znajdujacego sie w klasie plecak
 	int aktualna_waga = 0;
@@ -86,12 +42,12 @@ void plecak::zachlanny() { // dziala i nie dziala; bo tak ma byc, nie pokazuje n
 		}
 	}
 	// --------------- wypisanie ---------------
-	cout << "\n --- ALgorytm zachlanny ---\n";
+	/*cout << "\n --- ALgorytm zachlanny ---\n";
 	cout << "ROZMIAR | WARTOSC\n";
 	for (unsigned int i = 0; i < przedmioty_dla_max.size(); i++) {
 		cout << przedmioty_dla_max[i].rozmiar << " " << przedmioty_dla_max[i].wartosc << endl;
 	}
-	cout << "Waga = " << aktualna_waga << ", wartosc = " << max_wartosc << endl;
+	cout << "Waga = " << aktualna_waga << ", wartosc = " << max_wartosc << endl;*/
 	// --------------- wypisanie end -----------
 	przedmioty_rosnaco.empty();
 	przedmioty_dla_max.empty();
@@ -149,12 +105,12 @@ void plecak::dynamiczny() {
 		}
 	}
 	// ---- wypisz: ----
-	cout << "\n --- Algorytm - programowanie dynamiczne ---\n";
+	/*cout << "\n --- Algorytm - programowanie dynamiczne ---\n";
 	cout << "ROZMIAR | WARTOSC\n";
 	for (unsigned int k = 0; k < buff_przedm[ile_przedmiotow][rozmiar].size(); k++) {
 			cout << buff_przedm[ile_przedmiotow][rozmiar][k].rozmiar << " " << buff_przedm[ile_przedmiotow][rozmiar][k].wartosc << endl;
 		}
-	cout << "Waga: " << suma_rozmiarow(buff_przedm[ile_przedmiotow][rozmiar]) << ", wartosc: " << suma_wartosci(buff_przedm[ile_przedmiotow][rozmiar]) << endl;
+	cout << "Waga: " << suma_rozmiarow(buff_przedm[ile_przedmiotow][rozmiar]) << ", wartosc: " << suma_wartosci(buff_przedm[ile_przedmiotow][rozmiar]) << endl;*/
 		// ---- wypisz end ----
 	//sprzatam:
 	for (int i = 0; i < ile_przedmiotow;  i++) {
